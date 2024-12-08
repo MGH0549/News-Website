@@ -1,0 +1,98 @@
+﻿@model ContactUs
+
+
+<div class="col-lg-6 container mt-2">
+
+
+    <form asp-action="SaveContact" method="post" >
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <input type="text" asp-for="Name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" asp-for="Email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" asp-for="Subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" asp-for="Message" rows="4" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                <button type="submit"class="btn btn-success">Send Message</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+@* <section id="testimonials" class="testimonials section"> *@
+@*     <!-- Section Title --> *@
+@*     <div class="container section-title" data-aos="fade-up"> *@
+@*         <h2>Testimonials</h2> *@
+@*         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> *@
+@*     </div><!-- End Section Title --> *@
+
+@*     <div class="container" data-aos="fade-up" data-aos-delay="100"> *@
+
+@*         <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }"> *@
+@*             <script type="application/json" class="swiper-config"> *@
+@*                 { *@
+@*                 "loop": true, *@
+@*                 "speed": 600, *@
+@*                 "autoplay": { *@
+@*                 "delay": 5000 *@
+@*                 }, *@
+@*                 "slidesPerView": "auto", *@
+@*                 "pagination": { *@
+@*                 "el": ".swiper-pagination", *@
+@*                 "type": "bullets", *@
+@*                 "clickable": true *@
+@*                 }, *@
+@*                 "breakpoints": { *@
+@*                 "320": { *@
+@*                 "slidesPerView": 1, *@
+@*                 "spaceBetween": 40 *@
+@*                 }, *@
+@*                 "1200": { *@
+@*                 "slidesPerView": 3, *@
+@*                 "spaceBetween": 20 *@
+@*                 } *@
+@*                 } *@
+@*                 } *@
+@*             </script> *@
+@*             <div class="swiper-wrapper"> *@
+
+@*                 @foreach (var item in ) *@
+@*                 { *@
+
+@*                     <div class="swiper-slide"> *@
+@*                         <div class="testimonial-item"   > *@
+@*                             <p> *@
+@*                                 <i class=" bi bi-quote quote-icon-left"></i> *@
+@*                                 <span>@item.Message</span> *@
+@*                                 <i class="bi bi-quote quote-icon-right"></i> *@
+@*                             </p> *@
+@*                             <img src="~/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> *@
+@*                             <h3>@item.Name</h3> *@
+                            
+@*                         </div> *@
+@*                     </div><!-- End testimonial item --> *@
+
+@*                 } *@
+@*             </div> *@
+@*                 <div class="swiper-pagination"></div> *@
+@*             </div> *@
+
+@*         </div> *@
+@*        </section> *@

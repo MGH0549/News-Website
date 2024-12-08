@@ -1,0 +1,56 @@
+﻿@model News
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+
+<div class="container">
+    <h4 class="m-2">News</h4>
+    <hr />
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            @* <div asp-validation-summary="All" class="text-danger"></div> *@
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientFiles" class="control-label"></label>
+                <input asp-for="ClientFiles" type="file" class="form-control" />
+                <span asp-validation-for="ClientFiles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label"></label>
+                <textarea asp-for="Topic" class="form-control"></textarea>
+                <span asp-validation-for="Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control list-group link-underline-success" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

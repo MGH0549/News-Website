@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("admin") || User.IsInRole("Manager"))
+    {
+        <li><a asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin</a></li>
+
+        @* <li class="nav-item"><a class="nav-link" href="/Categories/Index">Category</a></li> *@
+        @* <li class="nav-item"><a class="nav-link" href="/News/Index">News</a></li> *@
+        @* @if (User.IsInRole("Manager")) *@
+        @* { *@
+        @*     <li class="nav-item"><a class="nav-link" href="/Role/Index">Roles</a></li> *@
+        @*     <li class="nav-item"><a class="nav-link" href="/TeamMembers/Index">TeamMembers</a></li> *@
+        @* } *@
+    }
+   
+    <li class="nav-item">
+        <a class="na text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name</a>
+    </li>
+    <li class="nav-item">
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+   
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}
+
